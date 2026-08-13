@@ -52,3 +52,20 @@ const syncScrollCue=()=>{
 };
 syncScrollCue();
 window.addEventListener('scroll',syncScrollCue,{passive:true});
+
+const trackDestination=(eventName,url)=>{
+  if(typeof window.gtag==='function'){
+    window.gtag('event',eventName,{link_url:url,transport_type:'beacon'});
+  }
+  if(typeof window.ym==='function'){
+    window.ym(111579836,'reachGoal',eventName,{link_url:url});
+  }
+};
+
+document.querySelectorAll('a[href*="t.me/antonia_astart"]').forEach(link=>{
+  link.addEventListener('click',()=>trackDestination('telegram_click',link.href));
+});
+
+document.querySelectorAll('a[href*="boosty.to/antonia_astart"]').forEach(link=>{
+  link.addEventListener('click',()=>trackDestination('boosty_click',link.href));
+});
