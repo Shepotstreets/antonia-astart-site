@@ -62,7 +62,7 @@ const trackDestination=(eventName,url)=>{
   }
 };
 
-document.querySelectorAll('a[href*="t.me/antonia_astart"]').forEach(link=>{
+document.querySelectorAll('a[data-destination="telegram"]').forEach(link=>{
   link.addEventListener('click',()=>trackDestination('telegram_click',link.href));
 });
 
