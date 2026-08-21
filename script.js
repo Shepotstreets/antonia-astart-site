@@ -63,10 +63,8 @@ const trackDestination=(eventName,url,placement='unknown')=>{
 
   if(typeof window.gtag==='function'){
     window.gtag('event',eventName,eventParams);
-    window.gtag('event',`${eventName}_${placement}`,eventParams);
   }
   if(typeof window.ym==='function'){
-    window.ym(111579836,'reachGoal',eventName,eventParams);
     window.ym(111579836,'reachGoal',`${eventName}_${placement}`,eventParams);
   }
 };
