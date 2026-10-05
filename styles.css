@@ -503,6 +503,14 @@
   right:clamp(24px,6vw,90px);
   bottom:clamp(74px,10vh,118px);
 }
+.hero__copy .lang{
+  position:absolute;
+  left:0;
+  bottom:calc(100% + 16px);
+  padding:8px 0;
+  font-size:12px;
+  line-height:1;
+}
 .hero__scroll{
   position:fixed;
   z-index:5;
